@@ -53,7 +53,9 @@
 		```json
 		...
 		"target": "es6",
-		"outDir": "dist","rootDir": "src"
+		"outDir": "dist",
+		"rootDir": "src",
+		"strict": false
 		...
 		"include": ["src"],
 		"exclude": []
