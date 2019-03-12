@@ -2,6 +2,7 @@ import express from "express"
 import session from "express-session";
 import * as bodyParser from "body-parser";
 import * as path from 'path';
+import testRESTful from './route/testRESTful';
 
 // Creates and configures an ExpressJS web server.
 class App {
@@ -17,8 +18,8 @@ class App {
     }
   
     private set():void{
-      this.express.use('/public',express.static(path.resolve(__dirname+'/../public')));//express3-3/public
-      this.express.use('/js',express.static(path.resolve(__dirname+'/client')));//express3-3/dist/client
+      // this.express.use('/public',express.static(path.resolve(__dirname+'/../public')));//typescript_template/public
+      // this.express.use('/js',express.static(path.resolve(__dirname+'/client')));//typescript_template/dist/client
       this.express.use(bodyParser.json());
       this.express.use(bodyParser.urlencoded({extended:false}));
       this.express.set('view engine','jade');
@@ -40,6 +41,7 @@ class App {
     // Configure API endpoints.
     private routes(): void {
       // this.express.use('/', index);
+      this.express.use('/testRESTful', testRESTful);
     }
   }
   export default new App().express;//用 export 可以指派 function, objects 或 變數 給外部檔案引用。

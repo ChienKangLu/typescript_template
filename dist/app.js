@@ -13,7 +13,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const express_session_1 = __importDefault(require("express-session"));
 const bodyParser = __importStar(require("body-parser"));
-const path = __importStar(require("path"));
+const testRESTful_1 = __importDefault(require("./route/testRESTful"));
 // Creates and configures an ExpressJS web server.
 class App {
     //Run configuration methods on the Express instance.
@@ -24,8 +24,8 @@ class App {
         this.routes();
     }
     set() {
-        this.express.use('/public', express_1.default.static(path.resolve(__dirname + '/../public'))); //express3-3/public
-        this.express.use('/js', express_1.default.static(path.resolve(__dirname + '/client'))); //express3-3/dist/client
+        // this.express.use('/public',express.static(path.resolve(__dirname+'/../public')));//typescript_template/public
+        // this.express.use('/js',express.static(path.resolve(__dirname+'/client')));//typescript_template/dist/client
         this.express.use(bodyParser.json());
         this.express.use(bodyParser.urlencoded({ extended: false }));
         this.express.set('view engine', 'jade');
@@ -42,6 +42,7 @@ class App {
     // Configure API endpoints.
     routes() {
         // this.express.use('/', index);
+        this.express.use('/testRESTful', testRESTful_1.default);
     }
 }
 exports.default = new App().express; //用 export 可以指派 function, objects 或 變數 給外部檔案引用。

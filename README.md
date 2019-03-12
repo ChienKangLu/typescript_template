@@ -3,6 +3,8 @@
 + [Install local package](#Install-local-package)
 + [Install/uninstall/link/list global package](#Install/uninstall/link/list-global-package)
 + [Create project](#Create-project)
++ [RESTful API](#RESTful-API)
++ [Reference](#Reference)
 
 ## Install Node.js
 1. Install node.js
@@ -64,3 +66,29 @@
 	3. Compile .ts into .js
 		>```tsc```
 	4. Remove delete.ts and dist
+## RESTful API
+Representational State Transfer (REST) is a software architectural style. Web services that conform to the REST architectural style is termed RESTful Web services (RWS). 
+
+>REST designed Web services whose operations match to particular HTTP methods.
++ Operation -> HTTP method
++ CREATE -> POST
++ READ -> GET
++ UPDATE -> PATCH
++ DELETE -> DELETE
+
+>HTTP Status Codes
++ 201 Created
++ 404 Not Found
++ 200 OK
++ 204 No Content
+
+## Reference
++ [Nodejs Complete Tutorial](https://ithelp.ithome.com.tw/articles/10188051)
++ [Why don't use global modules?](https://www.sitepoint.com/solve-global-npm-module-dependency-problem/)
++ [RESTful API Tutorial](https://nodejust.com/node-js-restful-api-tutorial/)
++ [What's RESTful?](https://progressbar.tw/posts/53)
++ [HTTP Status Codes](https://www.restapitutorial.com/httpstatuscodes.html)
++ [WIKIPEDIA-REST](https://en.wikipedia.org/wiki/Representational_state_transfer)
+
+
+
